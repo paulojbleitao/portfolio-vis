@@ -1,0 +1,48 @@
+baseurl = "https://paulojbleitao.github.io/portfolio-vis/"
+title = "Portfolio"
+theme = "ghostwriter"
+publishDir = "docs"
+languageCode = "pt-br"
+copyright = "Paulo Leitão"
+
+
+[Author]
+    name = "Paulo Leitão"
+    profile = "https://github.com/paulojbleitao"
+
+[Taxonomies]
+    tag = "tags"
+
+[Params]
+    intro = true
+    headline = "Portfolio"
+    description = "Visualização de Dados"
+    github = "https://github.com/paulojbleitao"
+    email = "paulo.leitao@ccc.ufcg.edu.br"
+    opengraph = true
+    dateFormat = "Mon, Jan 2, 2006"
+    highlightJsUrl = ""
+    highlightJsLocalUrl = ""
+
+[Permalinks]
+    post = "/:year/:month/:day/:filename/"
+
+[[menu.main]]
+    name = "Blog"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "Projects"
+    url = "/project/"
+    weight = 2
+
+[[menu.main]]
+    name = "Contact"
+    url = "/page/contact/"
+    weight = 3
+
+[[menu.main]]
+    name = "About"
+    url = "/page/about/"
+    weight = 4
