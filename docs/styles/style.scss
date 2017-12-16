@@ -280,6 +280,31 @@ table {
 
 #latest-post { display: none; }
 
+.myvis2.axis path,
+.myvis2.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.myvis2.x.axis path {
+  display: none;
+}
+
+.myvis2.area.above {
+  fill: #a6cee3;
+}
+
+.myvis2.area.below {
+  fill: #b2df8a;
+}
+
+.myvis2.line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
 .post-container { margin: 0 40px; }
 
 .post-header {

@@ -1,4 +1,4 @@
-baseurl = "https://paulojbleitao.github.io/portfolio-vis/"
+baseurl = "http://127.0.0.1:8887/"
 title = "Portfolio"
 theme = "ghostwriter"
 publishDir = "docs"

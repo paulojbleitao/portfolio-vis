@@ -2,23 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Portfolio</title>
-    <link>https://paulojbleitao.github.io/portfolio-vis/post/</link>
+    <link>http://127.0.0.1:8887/post/</link>
     <description>Recent content in Posts on Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>Paulo Leitão</copyright>
     <lastBuildDate>Thu, 14 Dec 2017 19:41:43 -0300</lastBuildDate>
     
-	<atom:link href="https://paulojbleitao.github.io/portfolio-vis/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://127.0.0.1:8887/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Movimentação no açude velho</title>
-      <link>https://paulojbleitao.github.io/portfolio-vis/2017/12/14/movimentacao/</link>
+      <link>http://127.0.0.1:8887/2017/12/14/movimentacao/</link>
       <pubDate>Thu, 14 Dec 2017 19:41:43 -0300</pubDate>
       
-      <guid>https://paulojbleitao.github.io/portfolio-vis/2017/12/14/movimentacao/</guid>
-      <description>hmm</description>
+      <guid>http://127.0.0.1:8887/2017/12/14/movimentacao/</guid>
+      <description>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  
+     &#34;use strict&#34; function desenhaEixo(data, scale) { var svg = d3.select(&#34;#vis1&#34;), margin = {top: 20, right: 20, bottom: 30, left: 50}, width = +svg.attr(&#34;width&#34;) - margin.left - margin.right, height = +svg.attr(&#34;height&#34;) - margin.top - margin.bottom, g = svg.append(&#34;g&#34;).attr(&#34;transform&#34;, &#34;translate(&#34; + margin.left + &#34;,&#34; + margin.top + &#34;)&#34;); var parseTime = d3.timeParse(&#34;%H:%M&#34;); var x = d3.scaleTime() .rangeRound([0, width]) .domain(d3.extent(data, function(d) { return parseTime(d.key); })); var y = d3.</description>
     </item>
     
   </channel>
