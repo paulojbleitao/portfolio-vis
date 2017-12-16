@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Portfolio</title>
-    <link>http://127.0.0.1:8887/post/</link>
+    <link>https://paulojbleitao.github.io/portfolio-vis/post/</link>
     <description>Recent content in Posts on Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>Paulo Leitão</copyright>
     <lastBuildDate>Thu, 14 Dec 2017 19:41:43 -0300</lastBuildDate>
     
-	<atom:link href="http://127.0.0.1:8887/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://paulojbleitao.github.io/portfolio-vis/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Movimentação no açude velho</title>
-      <link>http://127.0.0.1:8887/2017/12/14/movimentacao/</link>
+      <link>https://paulojbleitao.github.io/portfolio-vis/2017/12/14/movimentacao/</link>
       <pubDate>Thu, 14 Dec 2017 19:41:43 -0300</pubDate>
       
-      <guid>http://127.0.0.1:8887/2017/12/14/movimentacao/</guid>
-      <description>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  
-     &#34;use strict&#34; function desenhaEixo(data, scale) { var svg = d3.select(&#34;#vis1&#34;), margin = {top: 20, right: 20, bottom: 30, left: 50}, width = +svg.attr(&#34;width&#34;) - margin.left - margin.right, height = +svg.attr(&#34;height&#34;) - margin.top - margin.bottom, g = svg.append(&#34;g&#34;).attr(&#34;transform&#34;, &#34;translate(&#34; + margin.left + &#34;,&#34; + margin.top + &#34;)&#34;); var parseTime = d3.timeParse(&#34;%H:%M&#34;); var x = d3.scaleTime() .rangeRound([0, width]) .domain(d3.extent(data, function(d) { return parseTime(d.key); })); var y = d3.</description>
+      <guid>https://paulojbleitao.github.io/portfolio-vis/2017/12/14/movimentacao/</guid>
+      <description>O açude velho é um ponto importante em Campina Grande, por se localizar no centro da cidade. Por conta disso, muita gente transita por ele todos os dias. Com isso, podemos visualizar os dados das pessoas que passam por lá em um determinado dia e chegar a conclusões interessantes.
+  O gráfico acima mostra a quantidade de pessoas que passam em cada ponto observado ao longo do dia. Podemos ver que, principalmente próximo às 8:00 e 14:00, o monumento dos burrinhos recebe mais visitantes que os outros pontos.</description>
     </item>
     
   </channel>

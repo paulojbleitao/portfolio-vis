@@ -4,19 +4,19 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Movimentação no açude velho &middot; Paulo Leitão</title>
-        <meta name="description" content="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  
-     &#34;use strict&#34; function desenhaEixo(data, scale) { var svg = d3.select(&#34;#vis1&#34;), margin = {top: 20, right: 20, bottom: 30, left: 50}, width = &#43;svg.attr(&#34;width&#34;) - margin.left - margin.right, height = &#43;svg.attr(&#34;height&#34;) - margin.top - margin.bottom, g = svg.append(&#34;g&#34;).attr(&#34;transform&#34;, &#34;translate(&#34; &#43; margin.left &#43; &#34;,&#34; &#43; margin.top &#43; &#34;)&#34;); var parseTime = d3.timeParse(&#34;%H:%M&#34;); var x = d3.scaleTime() .rangeRound([0, width]) .domain(d3.extent(data, function(d) { return parseTime(d.key); })); var y = d3.">
+        <meta name="description" content="O açude velho é um ponto importante em Campina Grande, por se localizar no centro da cidade. Por conta disso, muita gente transita por ele todos os dias. Com isso, podemos visualizar os dados das pessoas que passam por lá em um determinado dia e chegar a conclusões interessantes.
+  O gráfico acima mostra a quantidade de pessoas que passam em cada ponto observado ao longo do dia. Podemos ver que, principalmente próximo às 8:00 e 14:00, o monumento dos burrinhos recebe mais visitantes que os outros pontos.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="generator" content="Hugo 0.31" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta property="og:title" content="Movimentação no açude velho">
-<meta property="og:description" content="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  
-     &#34;use strict&#34; function desenhaEixo(data, scale) { var svg = d3.select(&#34;#vis1&#34;), margin = {top: 20, right: 20, bottom: 30, left: 50}, width = &#43;svg.attr(&#34;width&#34;) - margin.left - margin.right, height = &#43;svg.attr(&#34;height&#34;) - margin.top - margin.bottom, g = svg.append(&#34;g&#34;).attr(&#34;transform&#34;, &#34;translate(&#34; &#43; margin.left &#43; &#34;,&#34; &#43; margin.top &#43; &#34;)&#34;); var parseTime = d3.timeParse(&#34;%H:%M&#34;); var x = d3.scaleTime() .rangeRound([0, width]) .domain(d3.extent(data, function(d) { return parseTime(d.key); })); var y = d3.">
+<meta property="og:description" content="O açude velho é um ponto importante em Campina Grande, por se localizar no centro da cidade. Por conta disso, muita gente transita por ele todos os dias. Com isso, podemos visualizar os dados das pessoas que passam por lá em um determinado dia e chegar a conclusões interessantes.
+  O gráfico acima mostra a quantidade de pessoas que passam em cada ponto observado ao longo do dia. Podemos ver que, principalmente próximo às 8:00 e 14:00, o monumento dos burrinhos recebe mais visitantes que os outros pontos.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://127.0.0.1:8887/2017/12/14/movimentacao/">
-        <link rel="stylesheet" href="http://127.0.0.1:8887/dist/styles.css">
+<meta property="og:url" content="https://paulojbleitao.github.io/portfolio-vis/2017/12/14/movimentacao/">
+        <link rel="stylesheet" href="https://paulojbleitao.github.io/portfolio-vis/dist/styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         
@@ -31,10 +31,10 @@
                     <div class="site-title-wrapper">
                         
                             <h1 class="site-title">
-                                <a title="Portfolio" href="http://127.0.0.1:8887/">Portfolio</a>
+                                <a title="Portfolio" href="https://paulojbleitao.github.io/portfolio-vis/">Portfolio</a>
                             </h1>
                         
-                        <a class="button-square" href="http://127.0.0.1:8887/index.xml"><i class="fa fa-rss"></i></a>
+                        <a class="button-square" href="https://paulojbleitao.github.io/portfolio-vis/index.xml"><i class="fa fa-rss"></i></a>
                         
                         
                         
@@ -55,19 +55,19 @@
                     <ul class="site-nav">
                         
     <li class="site-nav-item">
-        <a title="Blog" href="/">Blog</a>
+        <a title="Blog" href="/portfolio-vis/">Blog</a>
     </li>
 
     <li class="site-nav-item">
-        <a title="Projects" href="/project/">Projects</a>
+        <a title="Projects" href="/portfolio-vis/project/">Projects</a>
     </li>
 
     <li class="site-nav-item">
-        <a title="Contact" href="/page/contact/">Contact</a>
+        <a title="Contact" href="/portfolio-vis/page/contact/">Contact</a>
     </li>
 
     <li class="site-nav-item">
-        <a title="About" href="/page/about/">About</a>
+        <a title="About" href="/portfolio-vis/page/about/">About</a>
     </li>
 
                     </ul>
@@ -98,18 +98,31 @@
 
     <p><meta charset="utf-8">
 <script src="https://d3js.org/d3.v4.min.js"></script>
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+O açude velho é um ponto importante em Campina Grande, por se localizar no centro da cidade. Por conta disso, muita gente transita por ele todos os dias. Com isso, podemos visualizar os dados das pessoas que passam por lá em um determinado dia e chegar a conclusões interessantes.</p>
+
 <div class="container">
     <svg class="myvis1" id="vis1" width="800" height="500"></svg>
-</div></p>
+</div>
+
+<p>O gráfico acima mostra a quantidade de pessoas que passam em cada ponto observado ao longo do dia. Podemos ver que, principalmente próximo às 8:00 e 14:00, o monumento dos burrinhos recebe mais visitantes que os outros pontos. E também, o Bob&rsquo;s e a estátua de Jackson do Pandeiro tem mais ou menos a mesma quantidade de transeuntes ao longo do dia.</p>
+
+<p>Podemos também observar outras características das pessoas, como as motorizadas e não motorizadas, tal como no gráfico a seguir:</p>
 
 <div class="container">
     <svg class="myvis2" id="vis2" width="800" height="500"></svg>
 </div>
 
+<p>Neste gráfico, a linha representa a quantidade de pessoas motorizadas que passam pelo açude ao longo do dia, e a área é a diferença entre as pessoas motorizadas e não motorizadas. Quando a área é azul, há mais pessoas não motorizadas do que motorizadas e quando é verde, ocorre o contrário. Podemos perceber que bem cedo de manhã há poucas pessoas motorizadas circulando, mas ao longo do dia, não surpreendentemente, há muitas pessoas motorizadas e a diferença é bem gritante. Além disso, também podemos ver que no fim do dia, a diferença se torna bem menor.</p>
+
+<p>Somos também capazes de diferenciar as pessoas não motorizadas entre homem e mulher e comparar as categorias:</p>
+
 <div class="container">
     <svg class="myvis3" id="vis3" width="800" height="500"></svg>
 </div>
+
+<p>É perceptível que, geralmente, há mais homens do que mulheres passando pelo açude. Ademais, o volume de pessoas não motorizadas diminui bastante no meio do dia.</p>
+
+<p>Com tudo isso, podemos ter uma melhor ideia das características das pessoas que frequentam o açude velho.</p>
 
 <!-- vis 1 -->
 
@@ -263,12 +276,6 @@ var x = d3.scaleTime()
 var y = d3.scaleLinear()
     .range([height, 0]);
 
-var xAxis = d3.axisBottom()
-    .scale(x);
-
-var yAxis = d3.axisLeft()
-    .scale(y);
-
 var line = d3.area()
     .curve(d3.curveBasis)
     .x(function(d) { return x(d.horario_inicial); })
@@ -310,33 +317,40 @@ d3.csv("https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/
       .attr("d", area.y0(0));
 
   svg2.append("path")
-      .attr("class", "area above")
       .attr("clip-path", "url(#clip-above)")
-      .attr("d", area.y0(function(d) { return y(d.total_ciclistas + d.total_pedestres); }));
+      .attr("d", area.y0(function(d) { return y(d.total_ciclistas + d.total_pedestres); }))
+      .attr("class", "area above")
+      .style("fill", "#a6cee3");
 
   svg2.append("path")
-      .attr("class", "area below")
       .attr("clip-path", "url(#clip-below)")
-      .attr("d", area);
+      .attr("d", area)
+      .attr("class", "area below")
+      .style("fill", "#b2df8a");
 
   svg2.append("path")
       .attr("class", "line")
-      .attr("d", line);
+      .attr("d", line)
+      .style("fill", "none")
+      .style("stroke", "#000")
+      .style("stroke-width", "1.5px");
 
   svg2.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
+      .call(d3.axisBottom(x));
 
   svg2.append("g")
       .attr("class", "y axis")
-      .call(yAxis)
+      .call(d3.axisLeft(y))
     .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Homens");
+      .attr("x", 2)
+      .attr("y", y(y.ticks().pop()) + 0.5)
+      .attr("dy", "0.32em")
+      .attr("fill", "#000")
+      .attr("font-weight", "bold")
+      .attr("text-anchor", "start")
+      .text("Quantidade de pessoas");;
 });
 
 </script>
@@ -456,7 +470,7 @@ d3.csv("https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/
 
     <div class="share">
         
-            <a class="icon-twitter" href="https://twitter.com/share?text=Movimenta%c3%a7%c3%a3o%20no%20a%c3%a7ude%20velho&url=http%3a%2f%2f127.0.0.1%3a8887%2f2017%2f12%2f14%2fmovimentacao%2f"
+            <a class="icon-twitter" href="https://twitter.com/share?text=Movimenta%c3%a7%c3%a3o%20no%20a%c3%a7ude%20velho&url=https%3a%2f%2fpaulojbleitao.github.io%2fportfolio-vis%2f2017%2f12%2f14%2fmovimentacao%2f"
                 onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                 <i class="fa fa-twitter"></i>
                 <span class="hidden">Twitter</span>
@@ -464,7 +478,7 @@ d3.csv("https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/
         
 
         
-            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2f127.0.0.1%3a8887%2f2017%2f12%2f14%2fmovimentacao%2f"
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fpaulojbleitao.github.io%2fportfolio-vis%2f2017%2f12%2f14%2fmovimentacao%2f"
                 onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                 <i class="fa fa-facebook"></i>
                 <span class="hidden">Facebook</span>
@@ -472,7 +486,7 @@ d3.csv("https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/
         
 
         
-            <a class="icon-google-plus" href="https://plus.google.com/share?url=http%3a%2f%2f127.0.0.1%3a8887%2f2017%2f12%2f14%2fmovimentacao%2f"
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=https%3a%2f%2fpaulojbleitao.github.io%2fportfolio-vis%2f2017%2f12%2f14%2fmovimentacao%2f"
               onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
               <i class="fa fa-google-plus"></i>
                 <span class="hidden">Google+</span>
@@ -493,7 +507,7 @@ d3.csv("https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/
             <div class="container">
                 <div class="site-title-wrapper">
                     <h1 class="site-title">
-                        <a title="Portfolio" href="http://127.0.0.1:8887/">Portfolio</a>
+                        <a title="Portfolio" href="https://paulojbleitao.github.io/portfolio-vis/">Portfolio</a>
                     </h1>
                     <a class="button-square button-jump-top js-jump-top" href="#">
                         <i class="fa fa-angle-up"></i>
@@ -510,14 +524,14 @@ d3.csv("https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/
             </div>
         </footer>
 
-        <script src="http://127.0.0.1:8887/js/jquery-1.11.3.min.js"></script>
-        <script src="http://127.0.0.1:8887/js/jquery.fitvids.js"></script>
+        <script src="https://paulojbleitao.github.io/portfolio-vis/js/jquery-1.11.3.min.js"></script>
+        <script src="https://paulojbleitao.github.io/portfolio-vis/js/jquery.fitvids.js"></script>
         
         
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         
         
-        <script src="http://127.0.0.1:8887/js/scripts.js"></script>
+        <script src="https://paulojbleitao.github.io/portfolio-vis/js/scripts.js"></script>
     </body>
 </html>
 
