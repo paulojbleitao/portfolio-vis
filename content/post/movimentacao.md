@@ -6,21 +6,21 @@ draft: false
 
 <meta charset="utf-8">
 <script src="https://d3js.org/d3.v4.min.js"></script>
-O açude velho é um ponto importante em Campina Grande, por se localizar no centro da cidade. Por conta disso, muita gente transita por ele todos os dias. Com isso, podemos visualizar os dados das pessoas que passam por lá em um determinado dia e chegar a conclusões interessantes.
+O açude velho é um ponto importante em Campina Grande devido à sua localização; por se encontrar no centro da cidade, o fluxo de locomoção em seu entorno é consideravelmente formidável. Por conta disso, muita gente transita por ele todos os dias. Com isso, podemos compilar informações das pessoas que por lá transitam em determinados períodos do dia e chegar a conclusões interessantes.
 
 <div class="container">
     <svg class="myvis1" id="vis1" width="800" height="500"></svg>
 </div>
 
-O gráfico acima mostra a quantidade de pessoas que passam em cada ponto observado ao longo do dia. Podemos ver que, principalmente próximo às 8:00 e 14:00, o monumento dos burrinhos recebe mais visitantes que os outros pontos. E também, o Bob's e a estátua de Jackson do Pandeiro tem mais ou menos a mesma quantidade de transeuntes ao longo do dia.
+O gráfico acima mostra a quantidade de pessoas que passam em cada ponto observado ao longo do dia. Podemos verificar que, principalmente próximo às 8:00 e 14:00, o monumento dos burrinhos recebe mais visitantes que os outros pontos. Ademais, o Bob's e a estátua de Jackson do Pandeiro apresentam, aproximadamente, a mesma quantidade de transeuntes no decorrer do dia.
 
-Podemos também observar outras características das pessoas, como as motorizadas e não motorizadas, tal como no gráfico a seguir:
+Podemos também observar outras características das pessoas, como o meio de transporte: motorizado (carros, ônibus etc.) e não motorizado (ciclistas e pedestres), tal como no gráfico a seguir:
 
 <div class="container">
     <svg class="myvis2" id="vis2" width="800" height="500"></svg>
 </div>
 
-Neste gráfico, a linha representa a quantidade de pessoas motorizadas que passam pelo açude ao longo do dia, e a área é a diferença entre as pessoas motorizadas e não motorizadas. Quando a área é azul, há mais pessoas não motorizadas do que motorizadas e quando é verde, ocorre o contrário. Podemos perceber que bem cedo de manhã há poucas pessoas motorizadas circulando, mas ao longo do dia, não surpreendentemente, há muitas pessoas motorizadas e a diferença é bem gritante. Além disso, também podemos ver que no fim do dia, a diferença se torna bem menor.
+Neste gráfico, a linha representa a quantidade de pessoas motorizadas que passam pelo açude em determinado período do dia, e a área é a diferença entre locomoção motorizada e não motorizada. Quando a área é azul, há mais pessoas não motorizadas do que motorizadas e quando é verde, ocorre o contrário. Podemos perceber que no início da manhã há poucas pessoas motorizadas circulando, mas ao longo do dia, não surpreendentemente, há muitas pessoas motorizadas e a diferença é bem expressiva. Além disso, também podemos observar que no fim do dia, a discrepância se torna bem menor.
 
 Somos também capazes de diferenciar as pessoas não motorizadas entre homem e mulher e comparar as categorias:
 
@@ -28,7 +28,7 @@ Somos também capazes de diferenciar as pessoas não motorizadas entre homem e m
     <svg class="myvis3" id="vis3" width="800" height="500"></svg>
 </div>
 
-É perceptível que, geralmente, há mais homens do que mulheres passando pelo açude. Ademais, o volume de pessoas não motorizadas diminui bastante no meio do dia.
+É perceptível que, geralmente, o número de homens que passa pelo açude predomina sobre o de mulheres. Ademais, o volume de ciclistas e pedestres diminui bastante no meio do dia.
 
 Com tudo isso, podemos ter uma melhor ideia das características das pessoas que frequentam o açude velho. 
 
