@@ -8,9 +8,17 @@ draft: false
 <script src="https://d3js.org/d3.v4.min.js"></script>
 O açude velho é um ponto importante em Campina Grande devido à sua localização; por se encontrar no centro da cidade, o fluxo de locomoção em seu entorno é consideravelmente formidável. Por conta disso, muita gente transita por ele todos os dias. Com isso, podemos compilar informações das pessoas que por lá transitam em determinados períodos do dia e chegar a conclusões interessantes.
 
-<div class="container">
+<div class="container" id="container1">
     <svg class="myvis1" id="vis1" width="800" height="500"></svg>
 </div>
+<div class="container">
+    <div id="dropdown1">Horário inicial: </div>
+    <div id="dropdown2">Horário final: </div>
+    <button class="btn-default" id="botao">
+        Atualizar gráfico
+    </button>
+</div><br/><br/>
+
 
 O gráfico acima mostra a quantidade de pessoas que passam em cada ponto observado ao longo do dia. Podemos verificar que, principalmente próximo às 8:00 e 14:00, o monumento dos burrinhos recebe mais visitantes que os outros pontos. Ademais, o Bob's e a estátua de Jackson do Pandeiro apresentam, aproximadamente, a mesma quantidade de transeuntes no decorrer do dia.
 
@@ -97,7 +105,7 @@ function desenhaEixo(data, scale) {
         .text(function(d) { return d; });
 }
 
-function desenhaGrafico(dataPlace, data, scale, color) {
+function desenhaLinha(dataPlace, data, scale, color) {
     var svg = d3.select("#vis1"),
         margin = {top: 20, right: 20, bottom: 30, left: 50},
         width = +svg.attr("width") - margin.left - margin.right,
@@ -125,43 +133,119 @@ function desenhaGrafico(dataPlace, data, scale, color) {
         .attr("stroke", color)
         .attr("stroke-linejoin", "round")
         .attr("stroke-linecap", "round")
-        .attr("stroke-width", 1.5)
-        .attr("d", line);
+        .attr("stroke-width", 2)
+        .attr("d", line)
+        .on("mouseover", mouseover)
+        .on("mouseout", function(d) {
+            d3.selectAll("path")
+              .style("opacity", 1);
+        })
+
+    function mouseover(d) {
+        var me = this;
+        d3.selectAll("path").style("opacity", function() {
+            if (this === me) {
+                return 1;
+            } else {
+                return 0.4;
+            }
+        }) 
+    }
 };
 
-d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
+function filtraDados(dados, tempoInicial, tempoFinal) {
     var data = d3.nest()
         .key(d => d.horario_inicial)
         .rollup(v => d3.mean(v, d => parseInt(d.total_motorizados) + parseInt(d.total_ciclistas) + parseInt(d.total_pedestres)))
-        .entries(dados);
+        .entries(dados
+                .filter(d => d.horario_inicial >= tempoInicial)
+                .filter(d => d.horario_inicial <= tempoFinal));
 
     var dataBobs = d3.nest()
         .key(d => d.horario_inicial)
         .rollup(v => d3.mean(v, d => parseInt(d.total_motorizados) + parseInt(d.total_ciclistas) + parseInt(d.total_pedestres)))
-        .entries(dados.filter(d => d.local === "bobs"));
+        .entries(dados.filter(d => d.local === "bobs")
+                .filter(d => d.horario_inicial >= tempoInicial)
+                .filter(d => d.horario_inicial <= tempoFinal));
 
     var dataJackson = d3.nest()
         .key(d => d.horario_inicial)
         .rollup(v => d3.mean(v, d => parseInt(d.total_motorizados) + parseInt(d.total_ciclistas) + parseInt(d.total_pedestres)))
-        .entries(dados.filter(d => d.local === "jackson"));
+        .entries(dados.filter(d => d.local === "jackson")
+                .filter(d => d.horario_inicial >= tempoInicial)
+                .filter(d => d.horario_inicial <= tempoFinal));
 
     var dataBurrinhos = d3.nest()
         .key(d => d.horario_inicial)
         .rollup(v => d3.mean(v, d => parseInt(d.total_motorizados) + parseInt(d.total_ciclistas) + parseInt(d.total_pedestres)))
-        .entries(dados.filter(d => d.local === "burrinhos"));
+        .entries(dados.filter(d => d.local === "burrinhos")
+                .filter(d => d.horario_inicial >= tempoInicial)
+                .filter(d => d.horario_inicial <= tempoFinal));
+
+    return {"data": data, "bobs": dataBobs, "jackson": dataJackson, "burrinhos": dataBurrinhos};
+}
+
+function desenhaGrafico(dados, tempoInicial, tempoFinal) {
+    var dadosFiltrados = filtraDados(dados, tempoInicial, tempoFinal);
+    var data = dadosFiltrados["data"];
+    var dataBobs = dadosFiltrados["bobs"];
+    var dataJackson = dadosFiltrados["jackson"];
+    var dataBurrinhos = dadosFiltrados["burrinhos"];
 
     var max = Math.max(d3.max(dataBobs, function(d) {return d.value}), d3.max(dataJackson, function(d) {return d.value}), d3.max(dataBurrinhos, function(d) {return d.value}));
     var min = Math.min(d3.min(dataBobs, function(d) {return d.value}), d3.min(dataJackson, function(d) {return d.value}), d3.min(dataBurrinhos, function(d) {return d.value}));
-    var scale = [];
-    scale.push(min);
-    scale.push(max);
+    var scale = [min, max];
     
     desenhaEixo(data, scale);
-    desenhaGrafico(dataBobs, data, scale, "#1b9e77");
-    desenhaGrafico(dataJackson, data, scale, "#d95f02");
-    desenhaGrafico(dataBurrinhos, data, scale, "#7570b3");
-})
+    desenhaLinha(dataBobs, data, scale, "#1b9e77");
+    desenhaLinha(dataJackson, data, scale, "#d95f02");
+    desenhaLinha(dataBurrinhos, data, scale, "#7570b3");
+}
 
+function update(dados) {
+    var tempoInicial = d3.select("#dropdown1")
+                         .select("select")
+                         .property("value");
+
+    var tempoFinal = d3.select("#dropdown2")
+                       .select("select")
+                       .property("value");
+
+    if (tempoInicial < tempoFinal) {
+        d3.select("#vis1").remove();
+        d3.select("#container1").append("svg")
+            .attr("id", "vis1")
+            .attr("height", "500")
+            .attr("width", "800");
+        desenhaGrafico(dados, tempoInicial, tempoFinal);
+    }
+}
+
+d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
+    desenhaGrafico(dados, "06:00", "21:00");
+
+    var dropdown1 = d3.select("#dropdown1")
+        .append("select")
+        .attr("id", "tempoInicial")
+        .selectAll("option")
+            .data(dados.filter(d => d.local === "bobs"))
+            .enter()
+            .append("option")
+            .attr("value", function(d) {return d.horario_inicial})
+            .text(function(d) {return d.horario_inicial});
+    
+    var dropdown2 = d3.select("#dropdown2")
+        .append("select")
+        .attr("id", "tempoInicial")
+        .selectAll("option")
+            .data(dados.filter(d => d.local === "bobs"))
+            .enter()
+            .append("option")
+            .attr("value", function(d) {return d.horario_inicial})
+            .text(function(d) {return d.horario_inicial});
+
+    d3.select("#botao").on("click", function(d) {update(dados)});
+});
 </script>
 
 <!-- vis 2 -->
